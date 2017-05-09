@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      		<link rel="stylesheet" type="text/css" href="static/stylesheets/base.css" >
+          <!--{% if title %}
+    <title>KSEF Nairobi - {{ title }} -</title>
+    {% else %}
+    <title>KSEF Nairobi - The Home of Innovation</title>
+    {% endif %}-->
+		<meta name="viewport" content="witdh=device-width, initial-scale=1">
+    <style>
+      body {
+        font-family: arial, sans-serif
+      }
+      table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+      }
+
+      td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+      }
+
+      tr:nth-child(even) {
+          background-color: #dddddd;
+      }
+      </style>
+  </head>
+  <body style="background-color: whitesmoke">
+    <!--Navigation bar starts here -->
+    <div style="background-color:#000033;height:100px; text-align:center">
+
+      <span style="color:white; font-size: 75px">KSEF-NAIROBI</span>
+
+    </div >
+
+
+    <!--Navigation bar ends here-->
+
+    {% block content %}{% endblock %}
+  </body>
+</html>

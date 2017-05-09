@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}
+My Dashboard | Welcome
+{% endblock %}
+{% block content %}
+<div class="spacer">
+  <form method="POST">
+        {{ select_form.subject_submit}}
+        {{ select_form.subject}}
+  </form>
+</div>
+<table>
+  <tr>
+    <th></th>
+    <th style="color: blue">RANK</th>
+    <th>SCHOOL</th>
+    <th>ZONE</th>
+    <th>PROJECT TITLE</th>
+    <th>STUDENT 1</th>
+    <th>STUDENT 2</th>
+    <th style="color: blue">SCORE</th>
+
+  </tr>
+  {% for project in projects%}
+  <tr>
+    <td>{{ project.count}}</td>
+    <td style="color: blue">{{ project.rank}}</td>
+    <td>{{ project.school }}</td>
+    <td>{{ project.zone}}</td>
+    <td>{{ project.title}}</td>
+    <td>{{ project.first_presenter}}</td>
+    <td>{{ project.second_presenter}}</td>
+    <td style="color: blue">{{ project.score}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

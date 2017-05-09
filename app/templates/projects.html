@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}
+My Dashboard | Welcome
+{% endblock %}
+{% block content %}
+{% block fab %}
+
+{% endblock %}
+<form method="POST",  enctype="multipart/form-data">
+  <div style="display: table">
+    <div style="display: table-row">
+      <span style="width:25%; display: table-cell;">
+      Choose Subject{{ file_form.subject}}
+      </span>
+      <span style="width:10%; display: table-cell;">
+      {{ file_form.file}}
+      </span>
+      <span style="width:25%; display: table-cell;">
+      <input type=submit>
+      </span>
+    </div>
+</form>
+
+
+{% if current_user.register_as == "Student"%}
+<div style="display: table">
+  <div style="display: table-row">
+  <span style="width:15%; display: table-cell;">
+  <h4>Category</h4>
+  </span>
+  <span style="width:10%; display: table-cell;">
+  <h4>Title</h4>
+  </span>
+  <span style="width:10%; display: table-cell;">
+  <h4>First Presenter</h4>
+  </span>
+  <span style="width:10%; display: table-cell;">
+  <h4>Second Presenter</h4>
+  </span>
+  <span style="width:10%; display: table-cell;">
+  <h4>Score</h4>
+  </span>
+  <span style="width:10%; display: table-cell;">
+  <h4>Date Registered</h4>
+  </span>
+  <span style="width:10%; display: table-cell;">
+  <h4>Date Presented</h4>
+  </span>
+  </div>
+
+  {% for project in myprojects%}
+<div style="display: table-row;">
+<span style="width:15%; display: table-cell;">
+{{ project.category }}
+</span>
+<span style="width:10%; display: table-cell;">
+{{ project.title}}
+</span>
+<span style="width:10%; display: table-cell;">
+{{ project.first_presenter}}
+</span>
+<span style="width:10%; display: table-cell;">
+{{ project.second_presenter}}
+</span>
+<span style="width:10%; display: table-cell;">
+{{ project.average_score}}
+</span>
+<span style="width:10%; display: table-cell;">
+{{ project.date_registered}}
+</span>
+<span style="width:10%; display: table-cell;">
+{{ project.date_presented}}
+</span>
+</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}
