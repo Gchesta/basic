@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from datetime import date
 from flask import render_template, url_for, request, redirect, url_for, flash, abort
 from flask_login import login_required, login_user, logout_user, current_user, LoginManager
@@ -20,7 +22,7 @@ dbsession = DBSession()
 def load_user(id):
     return dbsession.query(User).filter_by(id=id).first()
 
-"""@app.route("/signup.html", methods=["GET", "POST"])
+@app.route("/signup.html", methods=["GET", "POST"])
 def signup():
     form = forms.SignupForm()
     if form.is_submitted:
@@ -31,7 +33,7 @@ def signup():
         dbsession.add(user)
         dbsession.commit()
         return redirect("/new-projects.html")
-    return render_template("signup.html", form=form)"""
+    return render_template("signup.html", form=form)
 
 @app.route("/login.html", methods=["GET", "POST"])
 def login():
@@ -59,6 +61,7 @@ def view_results():
         for position in range(1, length):
             if projects[position].score == projects[position - 1].score:
                 projects[position].rank = projects[position - 1].rank
+                print(projects[position].rank)
             else:
                 projects[position].rank = position + 1
             projects[position].count = position + 1
@@ -66,7 +69,7 @@ def view_results():
     return render_template("view-results.html", select_form=select_form)
 
 @app.route("/new-projects.html", methods=["GET", "POST"])
-@login_required
+#@login_required
 def new_projects():
     file_form = forms.ProjectFileForm()
     if file_form.file.data:
@@ -89,7 +92,7 @@ def new_projects():
     return render_template("projects.html", file_form=file_form)
 
 @app.route("/add-scores.html", methods=["GET", "POST"])
-@login_required
+#@login_required
 def add_scores():
     form = forms.AddScoresForm()
     select_form = forms.SelectSubjectForm()

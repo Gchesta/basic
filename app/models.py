@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from datetime import date
 from flask_login import UserMixin
 import werkzeug.security as ws
