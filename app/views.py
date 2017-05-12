@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python
 
 from datetime import date
 from flask import render_template, url_for, request, redirect, url_for, flash, abort

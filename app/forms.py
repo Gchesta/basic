@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python
 
 from flask_wtf import FlaskForm
 from wtforms.fields import StringField, PasswordField, SubmitField, SelectField, BooleanField, DecimalField, FileField, IntegerField, HiddenField
